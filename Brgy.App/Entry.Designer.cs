@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Entry));
             btnPublic = new MaterialSkin.Controls.MaterialButton();
             btnAdmin = new MaterialSkin.Controls.MaterialButton();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnPublic
@@ -39,7 +43,7 @@
             btnPublic.Depth = 0;
             btnPublic.HighEmphasis = true;
             btnPublic.Icon = null;
-            btnPublic.Location = new Point(456, 230);
+            btnPublic.Location = new Point(581, 405);
             btnPublic.Margin = new Padding(4, 6, 4, 6);
             btnPublic.MouseState = MaterialSkin.MouseState.HOVER;
             btnPublic.Name = "btnPublic";
@@ -59,7 +63,7 @@
             btnAdmin.Depth = 0;
             btnAdmin.HighEmphasis = true;
             btnAdmin.Icon = null;
-            btnAdmin.Location = new Point(456, 299);
+            btnAdmin.Location = new Point(581, 312);
             btnAdmin.Margin = new Padding(4, 6, 4, 6);
             btnAdmin.MouseState = MaterialSkin.MouseState.HOVER;
             btnAdmin.Name = "btnAdmin";
@@ -72,23 +76,48 @@
             btnAdmin.UseVisualStyleBackColor = true;
             btnAdmin.Click += btnAdmin_Click;
             // 
+            // panel1
+            // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(btnPublic);
+            panel1.Controls.Add(btnAdmin);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 64);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1258, 614);
+            panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.Location = new Point(533, 275);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(260, 336);
+            panel2.TabIndex = 2;
+            panel2.Paint += panel2_Paint;
+            // 
             // Entry
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1264, 681);
-            Controls.Add(btnAdmin);
-            Controls.Add(btnPublic);
+            Controls.Add(panel1);
             Name = "Entry";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Barangay Information System";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private MaterialSkin.Controls.MaterialButton btnPublic;
         private MaterialSkin.Controls.MaterialButton btnAdmin;
+        private Panel panel1;
+        private Panel panel2;
     }
 }

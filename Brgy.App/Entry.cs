@@ -35,6 +35,16 @@ namespace Brgy.App
             login.Show();
             this.Hide();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            // 128 is the transparency (0 = invisible, 255 = solid)
+            // 0, 0, 0 is the Color (Black). Change to 255, 255, 255 for White.
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(60, 0, 0, 0)))
+            {
+                e.Graphics.FillRectangle(brush, this.panel1.ClientRectangle);
+            }
+        }
     }
 
 }

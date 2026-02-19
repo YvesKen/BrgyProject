@@ -82,6 +82,24 @@ namespace Brgy.App
                 }
             }
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(60, 0, 0, 0)))
+            {
+                e.Graphics.FillRectangle(brush, this.panel1.ClientRectangle);
+            }
+        }
     }
 }
 
