@@ -32,6 +32,7 @@ namespace Brgy.App
         {
             // Redirect to the Login Form, NOT the Register Form
             LogForm login = new LogForm();
+            PublicDashboard dashboard = new PublicDashboard(true);
             login.Show();
             this.Hide();
         }
