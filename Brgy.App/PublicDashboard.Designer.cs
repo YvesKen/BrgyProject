@@ -32,7 +32,7 @@
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             tabPageAnnouncement = new TabPage();
             btnPost = new MaterialSkin.Controls.MaterialButton();
-            materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            txtAnnouncement = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             picPreview = new PictureBox();
             btnUpload = new MaterialSkin.Controls.MaterialButton();
             label1 = new Label();
@@ -41,6 +41,7 @@
             tabPage3 = new TabPage();
             tabPage4 = new TabPage();
             ofdUpload = new OpenFileDialog();
+            btnLogout = new Button();
             materialTabControl1.SuspendLayout();
             tabPageAnnouncement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPreview).BeginInit();
@@ -66,7 +67,7 @@
             // tabPageAnnouncement
             // 
             tabPageAnnouncement.Controls.Add(btnPost);
-            tabPageAnnouncement.Controls.Add(materialMultiLineTextBox1);
+            tabPageAnnouncement.Controls.Add(txtAnnouncement);
             tabPageAnnouncement.Controls.Add(picPreview);
             tabPageAnnouncement.Controls.Add(btnUpload);
             tabPageAnnouncement.Controls.Add(label1);
@@ -78,7 +79,6 @@
             tabPageAnnouncement.TabIndex = 0;
             tabPageAnnouncement.Text = "Home";
             tabPageAnnouncement.UseVisualStyleBackColor = true;
-          
             // 
             // btnPost
             // 
@@ -99,19 +99,19 @@
             btnPost.UseAccentColor = false;
             btnPost.UseVisualStyleBackColor = true;
             // 
-            // materialMultiLineTextBox1
+            // txtAnnouncement
             // 
-            materialMultiLineTextBox1.BackColor = Color.FromArgb(255, 255, 255);
-            materialMultiLineTextBox1.BorderStyle = BorderStyle.None;
-            materialMultiLineTextBox1.Depth = 0;
-            materialMultiLineTextBox1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialMultiLineTextBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialMultiLineTextBox1.Location = new Point(265, 28);
-            materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
-            materialMultiLineTextBox1.Size = new Size(100, 96);
-            materialMultiLineTextBox1.TabIndex = 4;
-            materialMultiLineTextBox1.Text = "";
+            txtAnnouncement.BackColor = Color.FromArgb(255, 255, 255);
+            txtAnnouncement.BorderStyle = BorderStyle.None;
+            txtAnnouncement.Depth = 0;
+            txtAnnouncement.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtAnnouncement.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            txtAnnouncement.Location = new Point(265, 28);
+            txtAnnouncement.MouseState = MaterialSkin.MouseState.HOVER;
+            txtAnnouncement.Name = "txtAnnouncement";
+            txtAnnouncement.Size = new Size(100, 96);
+            txtAnnouncement.TabIndex = 4;
+            txtAnnouncement.Text = "";
             // 
             // picPreview
             // 
@@ -196,11 +196,23 @@
             // 
             ofdUpload.FileName = "openFileDialog1";
             // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.MidnightBlue;
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+            btnLogout.Location = new Point(760, 35);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(33, 23);
+            btnLogout.TabIndex = 1;
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // PublicDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnLogout);
             Controls.Add(materialTabControl1);
             DrawerShowIconsWhenHidden = true;
             DrawerTabControl = materialTabControl1;
@@ -225,8 +237,9 @@
         private MaterialSkin.Controls.MaterialButton btnUpload;
         private Label label1;
         private MaterialSkin.Controls.MaterialButton btnPost;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox txtAnnouncement;
         private PictureBox picPreview;
         private OpenFileDialog ofdUpload;
+        private Button btnLogout;
     }
 }
