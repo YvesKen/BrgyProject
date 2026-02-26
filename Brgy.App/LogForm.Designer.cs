@@ -47,7 +47,6 @@
             materialLabel1.Size = new Size(76, 19);
             materialLabel1.TabIndex = 0;
             materialLabel1.Text = "Username:";
-            materialLabel1.Click += materialLabel1_Click;
             // 
             // materialLabel2
             // 
@@ -133,7 +132,7 @@
             materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton2.UseAccentColor = false;
             materialButton2.UseVisualStyleBackColor = true;
-            materialButton2.Click += materialButton2_Click;
+            materialButton2.Click += btnRegister_Click;
             // 
             // LogForm
             // 

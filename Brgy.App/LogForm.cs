@@ -1,60 +1,35 @@
-﻿using MaterialSkin;
-using MaterialSkin.Controls;
-using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using System;
 using System.Windows.Forms;
+using Brgy.Domain;
+using Brgy.Service;
+using MaterialSkin.Controls;
 
 namespace Brgy.App
 {
     public partial class LogForm : MaterialForm
     {
-        public LogForm()
+        private readonly AuthService _authService = new AuthService();
+
+        public LogForm() { InitializeComponent(); }
+
+        private void materialButton1_Click(object sender, EventArgs e) // Your Login Button
         {
-            InitializeComponent();
-        }
+            Account user = _authService.VerifyUser(txtUser.Text, txtPass.Text);
 
-        private void materialLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BrgyDB;Integrated Security=True";
-
-            using (SqlConnection conn = new SqlConnection(connString))
+            if (user != null)
             {
-                string query = "SELECT COUNT(*) FROM Accounts WHERE Username=@user AND Password=@pass";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@user", txtUser.Text);
-                cmd.Parameters.AddWithValue("@pass", txtPass.Text);
-
-                conn.Open();
-                int count = (int)cmd.ExecuteScalar();
-
-                if (count > 0)
-                {
-                    PublicDashboard dash = new PublicDashboard(true); // Add 'true' here
-                    dash.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Credentials.");
-                }
+                new PublicDashboard(user.IsOfficial).Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Credentials!");
             }
         }
 
-        private void materialButton2_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
-            // Redirect to the Login Form, NOT the Register Form
-            RegisterForm login = new RegisterForm();
-            login.Show();
+            new RegisterForm().Show();
             this.Hide();
         }
     }

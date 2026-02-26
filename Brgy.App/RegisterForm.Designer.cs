@@ -70,7 +70,7 @@
             materialLabel2.Size = new Size(71, 19);
             materialLabel2.TabIndex = 1;
             materialLabel2.Text = "Fullname:";
-            materialLabel2.Click += materialLabel2_Click;
+            
             // 
             // materialLabel3
             // 
@@ -84,7 +84,7 @@
             materialLabel3.Size = new Size(76, 19);
             materialLabel3.TabIndex = 2;
             materialLabel3.Text = "Username:";
-            materialLabel3.Click += materialLabel3_Click;
+          
             // 
             // materialLabel4
             // 
@@ -126,7 +126,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(405, 23);
             txtPassword.TabIndex = 7;
-            txtPassword.TextChanged += txtPassword_TextChanged;
+          
             // 
             // btnRegister
             // 
@@ -185,7 +185,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(709, 260);
             panel3.TabIndex = 8;
-            panel3.Paint += panel3_Paint;
+      
             // 
             // RegisterForm
             // 
